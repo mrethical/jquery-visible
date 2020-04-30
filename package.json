@@ -1,28 +1,36 @@
 {
   "name": "jquery-visible",
-  "version": "1.2.0",
+  "version": "2.0.0-alpha",
   "description": "Quickly check if an element is within the browsers visible viewport, regardless of scroll position. If a user can see this element, the function will return true.",
-  "main": "jquery.visible.js",
+  "main": "./src/index.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && gulp build-all",
+    "clean": "gulp clean"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/customd/jquery-visible.git"
+    "url": "git+https://github.com/mrethical/jquery-visible.git"
   },
   "author": {
-    "name"  : "Sam Sehnert",
-    "email" : "sam@customd.com",
+    "name": "Sam Sehnert",
+    "email": "sam@customd.com",
     "homepage": "https://www.customd.com/articles/13/checking-if-an-element-is-visible-on-screen-using-jquery"
   },
+  "contributors": [
+    {
+      "name": "Jefferson Magboo",
+      "email": "jeffersonmagboo21@gmail.com",
+      "url": "https://github.com/mrethical"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/customd/jquery-visible/issues"
+    "url": "https://github.com/mrethical/jquery-visible/issues"
   },
-  "homepage": "https://github.com/customd/jquery-visible#readme",
+  "homepage": "https://github.com/mrethical/jquery-visible#readme",
   "keywords": [
     "visible",
     "viewport",
@@ -35,5 +43,17 @@
     "element",
     "hidden",
     "hide"
-  ]
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.5.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.5.0",
+    "vinyl-source-stream": "^2.0.0"
+  }
 }

@@ -1,4 +1,5 @@
-(function($){
+
+export default function($) {
 
     /**
      * Copyright 2012, Digital Fusion
@@ -15,14 +16,14 @@
 
         if (this.length < 1)
             return;
-	
-	// Set direction default to 'both'.
-	direction = direction || 'both';
-	    
+
+        // Set direction default to 'both'.
+        direction = direction || 'both';
+
         var $t          = this.length > 1 ? this.eq(0) : this,
-						isContained = typeof container !== 'undefined' && container !== null,
-						$c				  = isContained ? $(container) : $w,
-						wPosition        = isContained ? $c.position() : 0,
+            isContained = typeof container !== 'undefined' && container !== null,
+            $c				  = isContained ? $(container) : $w,
+            wPosition        = isContained ? $c.position() : 0,
             t           = $t.get(0),
             vpWidth     = $c.outerWidth(),
             vpHeight    = $c.outerHeight(),
@@ -33,20 +34,20 @@
             // Use this native browser method, if available.
             var rec = t.getBoundingClientRect(),
                 tViz = isContained ?
-												rec.top - wPosition.top >= 0 && rec.top < vpHeight + wPosition.top :
-												rec.top >= 0 && rec.top < vpHeight,
+                    rec.top - wPosition.top >= 0 && rec.top < vpHeight + wPosition.top :
+                    rec.top >= 0 && rec.top < vpHeight,
                 bViz = isContained ?
-												rec.bottom - wPosition.top > 0 && rec.bottom <= vpHeight + wPosition.top :
-												rec.bottom > 0 && rec.bottom <= vpHeight,
+                    rec.bottom - wPosition.top > 0 && rec.bottom <= vpHeight + wPosition.top :
+                    rec.bottom > 0 && rec.bottom <= vpHeight,
                 lViz = isContained ?
-												rec.left - wPosition.left >= 0 && rec.left < vpWidth + wPosition.left :
-												rec.left >= 0 && rec.left <  vpWidth,
+                    rec.left - wPosition.left >= 0 && rec.left < vpWidth + wPosition.left :
+                    rec.left >= 0 && rec.left <  vpWidth,
                 rViz = isContained ?
-												rec.right - wPosition.left > 0  && rec.right < vpWidth + wPosition.left  :
-												rec.right > 0 && rec.right <= vpWidth,
+                    rec.right - wPosition.left > 0  && rec.right < vpWidth + wPosition.left  :
+                    rec.right > 0 && rec.right <= vpWidth,
                 vVisible   = partial ? tViz || bViz : tViz && bViz,
                 hVisible   = partial ? lViz || rViz : lViz && rViz,
-		vVisible = (rec.top < 0 && rec.bottom > vpHeight) ? true : vVisible,
+                vVisible = (rec.top < 0 && rec.bottom > vpHeight) ? true : vVisible,
                 hVisible = (rec.left < 0 && rec.right > vpWidth) ? true : hVisible;
 
             if(direction === 'both')
@@ -80,4 +81,4 @@
         }
     };
 
-})(jQuery);
+}
